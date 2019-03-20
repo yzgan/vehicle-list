@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_033734) do
 
   create_table "vehicles", force: :cascade do |t|
     t.bigint "vehicle_model_id"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.integer "mileage_id"
     t.string "plate_num"
     t.string "transmission"
@@ -66,15 +66,14 @@ ActiveRecord::Schema.define(version: 2019_03_20_033734) do
     t.datetime "deleted_at"
     t.integer "booking_count"
     t.decimal "rating", precision: 3, scale: 1
-    t.jsonb "feature", default: {}
+    t.jsonb "features", default: {}
     t.integer "old_id"
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_vehicles_on_user_id"
     t.index ["vehicle_model_id"], name: "index_vehicles_on_vehicle_model_id"
   end
 
   add_foreign_key "vehicle_models", "vehicle_manufacturers"
-  add_foreign_key "vehicles", "users"
   add_foreign_key "vehicles", "vehicle_models"
 end

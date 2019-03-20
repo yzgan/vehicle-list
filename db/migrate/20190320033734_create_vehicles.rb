@@ -2,7 +2,7 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
   def change
     create_table :vehicles do |t|
       t.references :vehicle_model, foreign_key: true
-      t.references :user, foreign_key: true
+      t.integer :user_id
       t.integer :mileage_id
       t.string :plate_num
       t.string :transmission
@@ -26,8 +26,9 @@ class CreateVehicles < ActiveRecord::Migration[5.2]
       t.datetime :deleted_at
       t.integer :booking_count
       t.decimal :rating, precision: 3, scale: 1
-      t.jsonb :feature, default: {}
+      t.jsonb :features, default: {}
       t.integer :old_id
+      t.integer :year
       t.timestamps
     end
   end
