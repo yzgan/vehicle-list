@@ -4,7 +4,7 @@ require 'test_helper'
 
 class VehicleModelsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @vehicle_model = vehicle_models(:one)
+    @vehicle_model = vehicle_models(:aventator)
   end
 
   test 'should get index' do
@@ -17,7 +17,7 @@ class VehicleModelsControllerTest < ActionDispatch::IntegrationTest
       params = {
         vehicle_model: {
           doors: @vehicle_model.doors,
-          manufacturer_id: @vehicle_model.manufacturer_id,
+          vehicle_manufacturer_id: @vehicle_model.vehicle_manufacturer_id,
           name: @vehicle_model.name,
           seats: @vehicle_model.seats,
           vehicle_type_id: @vehicle_model.vehicle_type_id
@@ -40,7 +40,7 @@ class VehicleModelsControllerTest < ActionDispatch::IntegrationTest
     params = {
       vehicle_model: {
         doors: @vehicle_model.doors,
-        manufacturer_id: @vehicle_model.manufacturer_id,
+        vehicle_manufacturer_id: @vehicle_model.vehicle_manufacturer_id,
         name: @vehicle_model.name,
         seats: @vehicle_model.seats,
         vehicle_type_id: @vehicle_model.vehicle_type_id

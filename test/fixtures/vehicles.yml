@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_model: aventator
+  user: david
+  mileage_id: 1
+
+two:
+  vehicle_model: i8
+  user: alexis
+  mileage_id: 1

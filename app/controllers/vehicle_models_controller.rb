@@ -42,6 +42,7 @@ class VehicleModelsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_vehicle_model
     @vehicle_model = VehicleModel.find(params[:id])
@@ -49,6 +50,6 @@ class VehicleModelsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def vehicle_model_params
-    params.require(:vehicle_model).permit(:manufacturer_id, :name, :vehicle_type_id, :seats, :doors)
+    params.require(:vehicle_model).permit(:vehicle_manufacturer_id, :name, :vehicle_type_id, :seats, :doors)
   end
 end

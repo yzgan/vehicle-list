@@ -2,7 +2,7 @@
 
 # controller/vehicle_manufacturers_controller.rb
 class VehicleManufacturersController < ApplicationController
-  before_action :set_vehicle_manufacturer, only: %i[show update delete]
+  before_action :set_vehicle_manufacturer, only: %i[show update destroy]
 
   # GET /vehicle_manufacturers
   def index

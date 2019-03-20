@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 i8:
-  manufacturer: bmw
+  vehicle_manufacturer: bmw
   name: i8
   vehicle_type_id: 1
   seats: 4
   doors: 2
 
 aventator:
-  manufacturer: lamborghini
+  vehicle_manufacturer: lamborghini
   name: Aventator
   vehicle_type_id: 2
   seats: 4

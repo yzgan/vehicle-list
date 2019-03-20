@@ -4,7 +4,7 @@ require 'test_helper'
 
 class VehicleManufacturersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @vehicle_manufacturer = vehicle_manufacturers(:one)
+    @vehicle_manufacturer = vehicle_manufacturers(:bmw)
   end
 
   test 'should get index' do
