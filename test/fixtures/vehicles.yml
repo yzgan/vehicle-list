@@ -2,10 +2,14 @@
 
 one:
   vehicle_model: aventator
-  user: david
+  user_id: 1
   mileage_id: 1
+  latitude: 2.939149
+  longitude: 101.692317
 
 two:
   vehicle_model: i8
-  user: alexis
+  user_id: 2
   mileage_id: 1
+  latitude: 3.138922
+  longitude: 101.607139

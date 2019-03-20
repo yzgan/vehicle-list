@@ -8,8 +8,19 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get vehicles_url, as: :json
+    params = {
+      latitude: 3.119158,
+      longitude: 101.674239,
+      # page: 1
+    }
+    get vehicles_url(params: params), as: :json
+
     assert_response :success
+
+    json = JSON.parse(@response.body)
+
+    assert_kind_of Array, json
+    assert_includes json.pluck('id'), @vehicle.id
   end
 
   test 'should create vehicle' do

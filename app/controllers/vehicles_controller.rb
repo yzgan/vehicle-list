@@ -3,10 +3,11 @@
 # app/controllers/vehicles_controller.rb
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[show update destroy]
+  before_action :set_location, only: %i[index]
 
   # GET /vehicles
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.by_distance(origin: @location)#.limit(30)
 
     render json: @vehicles
   end
@@ -51,5 +52,13 @@ class VehiclesController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def vehicle_params
     params.require(:vehicle).permit(:vehicle_model_id, :user_id, :mileage_id)
+  end
+
+  def location_params
+    params.permit(:latitude, :longitude)
+  end
+
+  def set_location
+    @location = location_params.values.map(&:to_f)
   end
 end
