@@ -10,7 +10,7 @@ class VehiclesController < ApplicationController
     @pagy, @vehicles = pagy(Vehicle.by_distance(origin: @location), items: 30)
     @vehicles.filter_all
 
-    render json: @vehicles
+    render json: VehicleSerializer.new(@vehicles, params: { location: @location })
   end
 
   # GET /vehicles/1
