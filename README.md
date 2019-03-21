@@ -1,24 +1,14 @@
-# README
+# Vehicle Listing API Application - Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Deployed to Heroku with following domain:
+```
+https://rocky-shore-98362.herokuapp.com
+```
 
-Things you may want to cover:
+To query vehicle list, send `GET` request to link provided with `latitude`, `longitude` and optional `page` params.
 
-* Ruby version
+Example:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+https://rocky-shore-98362.herokuapp.com/vehicles?latitude=3.119158&longitude=101.674239&page=1
+```
