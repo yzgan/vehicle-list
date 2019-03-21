@@ -13,3 +13,13 @@ two:
   mileage_id: 1
   latitude: 3.138922
   longitude: 101.607139
+
+
+<% 1000.times do |n| %>
+sample_<%= n %>:
+  vehicle_model: <%= %w[aventator i8].sample %>
+  user_id: <%= n %>
+  mileage_id: 1
+  latitude: <%= Faker::Number.decimal(1, 6).to_f %>
+  longitude: <%= 100 + Faker::Number.decimal(1, 6).to_f %>
+<% end %>

@@ -7,7 +7,8 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles
   def index
-    @vehicles = Vehicle.by_distance(origin: @location)#.limit(30)
+    @pagy, @vehicles = pagy(Vehicle.by_distance(origin: @location), items: 30)
+    @vehicles.filter_all
 
     render json: @vehicles
   end
@@ -22,7 +23,7 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new(vehicle_params)
 
     if @vehicle.save
-      render json: @vehicle, status: :created, location: @vehicle
+      render json: @vehicle, status: :created, location: @vehicles_controller
     else
       render json: @vehicle.errors, status: :unprocessable_entity
     end
